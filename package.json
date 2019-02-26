@@ -1,17 +1,19 @@
 {
   "name": "brain-gamess",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Brain Games - it is a set of mini-games launched from the console",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-	"prepublishOnly": "npm run build"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-  "author": "",
+  "author": "Nikita Artemov",
+  "keywords": [
+    "hexlet-project",
+    "Brain Games"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
