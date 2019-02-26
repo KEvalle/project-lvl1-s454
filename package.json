@@ -1,6 +1,6 @@
 {
   "name": "brain-gamess",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brain Games - it is a set of mini-games launched from the console",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -21,7 +21,10 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1"
   },
- "files": [
+  "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
