@@ -1,6 +1,6 @@
 {
   "name": "brain-gamess",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Brain Games - it is a set of mini-games launched from the console",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",

@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
 
 const welcome = 'Welcome to the Brain Games!';
-const description = `Answer 'yes' if number even otherwise answer 'no'.`;
+const description = "Answer 'yes' if number even otherwise answer 'no'.";
 const countQuestion = 3;
+
+const isEven = question => question % 2 === 0;
 
 export const askName = () => {
   console.log(welcome);
@@ -19,7 +21,6 @@ export const checkEven = () => {
 
   for (let counter = 1; counter <= countQuestion; counter += 1) {
     const question = Math.floor(Math.random() * 100);
-    const even = (question % 2 === 0);
     const answer = readlineSync.question(`Question:${question}\nYou answer:`);
     const trueAnswer = (isEven(question) === true) ? 'yes' : 'no';
 
@@ -32,5 +33,3 @@ export const checkEven = () => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
-const isEven = (question) => question % 2 === 0;
