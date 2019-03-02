@@ -1,11 +1,13 @@
 import {
-  welcome, acquaintance, descriptionEven, check,
+  welcome, acquaintance, description, check,
 } from '..';
 
+const isEven = question => question % 2 === 0;
+const getQuestion = () => () => Math.floor(Math.random() * 100);
+const getTrueAnswer = () => question => ((isEven(question)) ? 'yes' : 'no');
 export default () => {
-  const countQuestion = 3;
   welcome();
-  descriptionEven();
+  description("Answer 'yes' if number even otherwise answer 'no'.");
   const name = acquaintance();
-  check(countQuestion, name, 'brain-even');
+  check(getQuestion(), getTrueAnswer(), name);
 };
