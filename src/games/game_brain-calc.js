@@ -1,9 +1,10 @@
 import {
-  welcome, acquaintance, description, check,
+  gameProcess,
 } from '..';
+import { getRandomNumber } from '../utils';
 
-const calcNumberOne = () => Math.floor(Math.random() * 100);
-const calcNumberTwo = () => Math.floor(Math.random() * 100);
+const calcNumberOne = () => getRandomNumber(1, 99);
+const calcNumberTwo = () => getRandomNumber(1, 99);
 const isOperator = () => {
   const randomNumber = Math.random();
   const part = 1 / 3;
@@ -16,10 +17,16 @@ const isOperator = () => {
 const calcOperator = () => isOperator();
 const getQuestion = () => () => `${calcNumberOne()}${calcOperator()}${calcNumberTwo()}`;
 const calculateNumbers = (numberOne, numberTwo, operator) => {
-  if (operator === '+') return `${(numberOne + numberTwo)}`;
-  if (operator === '-') return `${(numberOne - numberTwo)}`;
-  if (operator === '*') return `${(numberOne * numberTwo)}`;
-  return false;
+  switch (operator) {
+    case '+':
+      return `${(numberOne + numberTwo)}`;
+    case '-':
+      return `${(numberOne - numberTwo)}`;
+    case '*':
+      return `${(numberOne * numberTwo)}`;
+    default:
+      break;
+  }
 };
 const getTrueAnswer = () => (question) => {
   let n = '';
@@ -38,8 +45,5 @@ const getTrueAnswer = () => (question) => {
   return calculateNumbers(+n1, +n, operator);
 };
 export default () => {
-  welcome();
-  description('What is the result of the expression?');
-  const name = acquaintance();
-  check(getQuestion(), getTrueAnswer(), name);
+  gameProcess('What is the result of the expression?', getQuestion(), getTrueAnswer());
 };

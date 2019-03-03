@@ -1,13 +1,11 @@
 import {
-  welcome, acquaintance, description, check,
+  gameProcess,
 } from '..';
+import { getRandomNumber } from '../utils';
 
 const isEven = question => question % 2 === 0;
-const getQuestion = () => () => Math.floor(Math.random() * 100);
+const getQuestion = () => () => getRandomNumber(1, 99);
 const getTrueAnswer = () => question => ((isEven(question)) ? 'yes' : 'no');
 export default () => {
-  welcome();
-  description("Answer 'yes' if number even otherwise answer 'no'.");
-  const name = acquaintance();
-  check(getQuestion(), getTrueAnswer(), name);
+  gameProcess("Answer 'yes' if number even otherwise answer 'no'.", getQuestion(), getTrueAnswer());
 };

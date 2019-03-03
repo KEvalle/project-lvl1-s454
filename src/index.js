@@ -11,7 +11,7 @@ export const acquaintance = () => {
   return actual;
 };
 
-export const check = (getQuestion, getTrueAnswer, name) => {
+const check = (getQuestion, getTrueAnswer, name) => {
   for (let counter = 1; counter <= countQuestion; counter += 1) {
     const question = getQuestion();
     const answer = getAnswerUser(question);
@@ -26,4 +26,11 @@ export const check = (getQuestion, getTrueAnswer, name) => {
     }
   }
   console.log(`Congratulations, ${name}!`);
+};
+
+export const gameProcess = (textDescription, getQuestion, getTrueAnswer) => {
+  welcome();
+  description(textDescription);
+  const name = acquaintance();
+  check(getQuestion, getTrueAnswer, name);
 };
