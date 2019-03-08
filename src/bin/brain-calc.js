@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import callCalc from '../games/game_brain-calc';
+import callCalc from '../games/calc';
 
 callCalc();

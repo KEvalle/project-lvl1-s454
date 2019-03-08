@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from './utils';
 
 export const welcome = () => console.log('Welcome to the Brain Games!');
 export const description = text => console.log(text);
@@ -11,11 +12,11 @@ export const acquaintance = () => {
   return actual;
 };
 
-const check = (getQuestion, getTrueAnswer, name) => {
+const check = (getPair, name) => {
   for (let counter = 1; counter <= countQuestion; counter += 1) {
-    const question = getQuestion();
-    const answer = getAnswerUser(question);
-    const trueAnswer = getTrueAnswer(question);
+    const pairNew = getPair();
+    const answer = getAnswerUser(car(pairNew));
+    const trueAnswer = `${cdr(pairNew)}`;
 
     if (answer === trueAnswer) {
       console.log('Correct!');
@@ -28,9 +29,9 @@ const check = (getQuestion, getTrueAnswer, name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const gameProcess = (textDescription, getQuestion, getTrueAnswer) => {
+export const gameProcess = (textDescription, getPair = 'none') => {
   welcome();
   description(textDescription);
   const name = acquaintance();
-  check(getQuestion, getTrueAnswer, name);
+  if (getPair !== 'none') check(getPair, name);
 };

@@ -1,20 +1,22 @@
-import {
-  gameProcess,
-} from '..';
+import { gameProcess } from '..';
 import { getRandomNumber } from '../utils';
 
 const calcNumberOne = () => getRandomNumber(1, 99);
 const calcNumberTwo = () => getRandomNumber(1, 99);
-const isOperator = () => {
-  const randomNumber = Math.random();
-  const part = 1 / 3;
-  if (randomNumber <= part) {
-    return '+';
-  } if (randomNumber <= part * 2) {
-    return '-';
-  } return '*';
+const getOperator = () => {
+  const part = getRandomNumber(1, 3);
+  switch (part) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
+    default:
+      return 'error';
+  }
 };
-const calcOperator = () => isOperator();
+const calcOperator = () => getOperator();
 const getQuestion = () => () => `${calcNumberOne()}${calcOperator()}${calcNumberTwo()}`;
 const calculateNumbers = (numberOne, numberTwo, operator) => {
   switch (operator) {
@@ -25,7 +27,7 @@ const calculateNumbers = (numberOne, numberTwo, operator) => {
     case '*':
       return `${(numberOne * numberTwo)}`;
     default:
-      break;
+      return 'error';
   }
 };
 const getTrueAnswer = () => (question) => {
