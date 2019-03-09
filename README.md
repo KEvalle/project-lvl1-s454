@@ -5,3 +5,5 @@ Brain-even:
 [![asciicast](https://asciinema.org/a/D4hYJL3pvA1tJ6JMvTQgnyf5M.svg)](https://asciinema.org/a/D4hYJL3pvA1tJ6JMvTQgnyf5M)
 Brain-calc:
 [![asciicast](https://asciinema.org/a/IHyf2OCrDZ49xHK1YYCJRc0mG.svg)](https://asciinema.org/a/IHyf2OCrDZ49xHK1YYCJRc0mG)
+Brain-progression:
+[![asciicast](https://asciinema.org/a/IVybLRE81zQKkjXhOvR3wMt8y.svg)](https://asciinema.org/a/IVybLRE81zQKkjXhOvR3wMt8y)
